@@ -1,4 +1,4 @@
-#include "Lib/Libft/inc/libft.h"
+#include "../Lib/Libft/inc/libft.h"
 
 /* cub3D custom define */
 # define FAILS -1

@@ -1,4 +1,4 @@
-#include "Lib/Libft/inc/libft.h"
+#include "../Lib/Libft/inc/libft.h"
 
 typedef struct s_config
 {
