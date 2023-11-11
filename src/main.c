@@ -5,8 +5,8 @@ int	main(int ac, char **av)
 {
 	t_config	conf;
 
-	if (ac != 2)
-		return (ft_putendl_fd(ARG_ERR, -1));
+	if (ac < 2)
+		return (ft_putendl_fd(ARG_ERR, STDERR_FILENO));
 	else if (parse_data(&conf, av) == FAILS) // must add launch_game(); later.
 		return (-1);
 	return (0);

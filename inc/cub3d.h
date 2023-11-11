@@ -3,11 +3,14 @@
 #include "../Lib/minilibx/mlx.h"
 
 #include <fcntl.h>
+#include <stdbool.h>
 
 typedef struct s_config
 {
 	char	**data;
 	char	**map;
+	int		map_loc;
+	int		map_len;
 	/*
 	mlx window
 	donnees parsing

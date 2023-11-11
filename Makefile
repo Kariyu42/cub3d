@@ -2,8 +2,7 @@
 # --- SRC / OBJ --- #
 SRC_PATH	=	./src/
 
-SRC			=	${addprefix ${SRC_PATH}, main.c \
-											parsing/parsing.c}
+SRC			=	${addprefix ${SRC_PATH}, main.c}
 
 OBJ			=	${SRC:.c=.o}
 
@@ -31,7 +30,7 @@ all:	${NAME}
 
 ${NAME}:	${OBJ}
 	@make -C ${LIBFT}
-	@${CC} ${CFLAGS} ${OFLAGS} ${LIBFT}libft.a ${OBJ} ${MLX}libmlx.a -o ${NAME}
+	@${CC} ${CFLAGS} ${OFLAGS} ${LIBFT}libft.a ${MLX}libmlx.a ${OBJ} -o ${NAME}
 	@printf "\n\tcub3D ready ✨\n"
 
 debug:

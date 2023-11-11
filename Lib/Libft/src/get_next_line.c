@@ -3,15 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elisa <elisa@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kquetat- <kquetat-@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:17:51 by kquetat-          #+#    #+#             */
-/*   Updated: 2023/11/10 13:39:35 by elisa            ###   ########.fr       */
+/*   Updated: 2023/11/11 16:42:28 by kquetat-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 #include "../inc/get_next_line.h"
+#include <stdio.h>
+
+static char	*ft_strjoin_gnl(char *s1, char *s2)
+{
+	int		i;
+	int		j;
+	int		len;
+	char	*result;
+
+	if (!s1)
+		s1 = ft_calloc(1, 1);
+	i = 0;
+	len = (int)ft_strlen(s1) + (int)ft_strlen(s2);
+	result = ft_calloc(len + 1, sizeof(char));
+	while (s1[i])
+	{
+		result[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		result[i] = s2[j];
+		i++;
+		j++;
+	}
+	free(s1);
+	return (result);
+}
 
 static char	*ft_stock_next_call(char *stash)
 {
@@ -80,7 +109,7 @@ static char	*ft_read_and_stock(int fd, char	*stash)
 			return (0);
 		}
 		buffer[i] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		stash = ft_strjoin_gnl(stash, buffer);
 	}
 	free(buffer);
 	return (stash);
