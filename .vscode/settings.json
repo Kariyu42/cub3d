@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"*.excalidraw": "json",
+		"*.excalidrawlib": "json",
+		"err_type.h": "c",
+		"cub3d.h": "c",
+		"libft.h": "c",
+		"mlx.h": "c",
+		"fcntl.h": "c"
+	}
+}
