@@ -3,7 +3,7 @@
 
 int	main(int ac, char **av)
 {
-	t_config	conf;
+	t_config	*conf;
 
 	if (ac < 2)
 		return (ft_putendl_fd(ARG_ERR, STDERR_FILENO));

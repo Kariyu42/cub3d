@@ -24,5 +24,5 @@ typedef struct	s_vars
 	void	*win;
 }				t_vars;
 
-int	parse_data(t_config *conf, char **av);
+int	parse_data(t_config **conf, char **av);
 // int	ft_close(t_vars *vars);

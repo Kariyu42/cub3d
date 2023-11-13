@@ -2,7 +2,8 @@
 # --- SRC / OBJ --- #
 SRC_PATH	=	./src/
 
-SRC			=	${addprefix ${SRC_PATH}, main.c}
+SRC			=	${addprefix ${SRC_PATH}, main.c \
+											parsing/parsing.c}
 
 OBJ			=	${SRC:.c=.o}
 
