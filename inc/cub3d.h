@@ -9,6 +9,8 @@ typedef struct s_config
 {
 	char	**data;
 	char	**map;
+	char	**file;
+	int		file_size;
 	int		map_loc;
 	int		map_len;
 	/*
