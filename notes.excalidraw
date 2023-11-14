@@ -38,8 +38,8 @@
     },
     {
       "type": "text",
-      "version": 1262,
-      "versionNonce": 568742315,
+      "version": 1263,
+      "versionNonce": 15685296,
       "isDeleted": false,
       "id": "F9OkKQCokmdFMKiRNjLg0",
       "fillStyle": "hachure",
@@ -59,7 +59,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1699612500042,
+      "updated": 1699957866839,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -70,12 +70,12 @@
       "containerId": null,
       "originalText": "PARSING\n\n- DONNÉE TEXTURE NO,SO,WE,EA \n- COULEUR\nfaire attention au format lors du paring.\n\nCARTE:\n\n1. SEUL CHOSES OBLIGATOIRES A PARSER SUR LA MAP SONT\nLES CARACTÈRES SUIVANTS: (N, W, E, S)-pour le joueur\net (0, 1)-pour le sol et les murs.\nif NOT\n{\n    return ERROR\\n;\n}\n\n2. VOIR SI N,W,E, OU S EST PRESENT SUR LA CARTE. ET\nSURTOUT VOIR SI IL Y EN A QU'UN SEUL.\n\nSI OUI\n{\n   REGARDER SI LA MAP EST FERMÉE{\n        faire en fonction de la plus longue ligne pour\n           determiner la forme de la map;\n    }\n    if not closed{\n        error\\n\n    }\n}\n",
       "lineHeight": 1.2,
-      "baseline": 716
+      "baseline": 715
     },
     {
       "type": "text",
-      "version": 738,
-      "versionNonce": 329331333,
+      "version": 739,
+      "versionNonce": 1230679120,
       "isDeleted": false,
       "id": "jl7ScRkAt-1t52xUjzM0R",
       "fillStyle": "hachure",
@@ -95,7 +95,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1699612500043,
+      "updated": 1699957866840,
       "link": null,
       "locked": false,
       "fontSize": 24.651927094540373,
@@ -106,12 +106,12 @@
       "containerId": null,
       "originalText": "///////////////\n/1111111111111/\n/1W00000000001/\n/111111111111//\n///////////////",
       "lineHeight": 1.2,
-      "baseline": 142
+      "baseline": 141
     },
     {
       "type": "text",
-      "version": 233,
-      "versionNonce": 1478812747,
+      "version": 234,
+      "versionNonce": 271646896,
       "isDeleted": false,
       "id": "-XmHy9WkjmZ45APk6PEPe",
       "fillStyle": "hachure",
@@ -131,7 +131,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1699612500043,
+      "updated": 1699957866840,
       "link": null,
       "locked": false,
       "fontSize": 26.991381159483065,
@@ -142,7 +142,7 @@
       "containerId": null,
       "originalText": " 1\n1W1\n 1 ",
       "lineHeight": 1.2,
-      "baseline": 90
+      "baseline": 91
     },
     {
       "type": "rectangle",
@@ -228,8 +228,8 @@
     },
     {
       "type": "text",
-      "version": 85,
-      "versionNonce": 1413650917,
+      "version": 86,
+      "versionNonce": 132162128,
       "isDeleted": false,
       "id": "pJpqhXgMWGUg8Nvn3WxDv",
       "fillStyle": "hachure",
@@ -249,7 +249,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1699612500043,
+      "updated": 1699957866841,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -260,7 +260,7 @@
       "containerId": null,
       "originalText": "\nmap invalide car le joueur pourrait passer dans certains cas ",
       "lineHeight": 1.2,
-      "baseline": 44
+      "baseline": 43
     },
     {
       "type": "text",
@@ -296,7 +296,7 @@
       "containerId": null,
       "originalText": "COMMENTAIRES :\n\nN'ACCEPTER QUE LES ESPACES POUR LE CONTOUR DE LA MAP POUR \nEVITER LES EVENTUELLES ERREURS (UTILISER LES \"/\" POUR PLUS DE COMPREHENSION SI BESOIN)\n\nIL FAUT QUE L'ENTIERETE DE LA MAP SOIT FERMEE POUR ETRE VALIDE ",
       "lineHeight": 1.15,
-      "baseline": 134
+      "baseline": 133
     }
   ],
   "appState": {
