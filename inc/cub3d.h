@@ -13,6 +13,7 @@ typedef struct s_config
 	int		file_size;
 	int		map_loc;
 	int		map_len;
+	int		count_data;
 	/*
 	mlx window
 	donnees parsing
@@ -27,4 +28,6 @@ typedef struct	s_vars
 }				t_vars;
 
 int	parse_data(t_config **conf, char **av);
+int check_data(t_config **conf);
+int	ft_strcmp(char *s1, char *s2);
 // int	ft_close(t_vars *vars);

@@ -102,12 +102,17 @@ int	map_len(t_config **conf)
 {
 	int	i;
 	int	res;
+	int line;
 
 	res = 0;
+	line = 0;
 	i = (*conf)->map_loc;
 	while ((*conf)->file[i])
 	{
-		res++;
+		line = count_map((*conf)->file[i]);
+		if (line == 2)
+			break;      // add error message
+		res += line;
 		i++;
 	}
 	return (res);
@@ -133,8 +138,9 @@ int	find_map(t_config **conf)
 	if (pinpoint_map(conf) == FAILS)
 		return (2);
 	(*conf)->map_len = map_len(conf);
+	printf("petit truc %d\n", (*conf)->map_len);
 	(*conf)->map = collect_map(conf);   // stock all map
-	print_map(conf);
+	//print_map(conf);
 	return (0);
 }
 
@@ -206,6 +212,10 @@ int	parse_data(t_config **conf, char **av)
 	if (verif_extension(av[1]) == FAILS)
 		return (2);
 	if (collect_data(conf, av, fd) == -1 || find_map(conf) == -1)
+		return (2);
+	if (check_data(conf) == 2)
+		return (2);
+	if (check_format(conf) == 2)
 		return (2);
 	// print_map(conf);
 	// if (map_data(conf, av) == FAILS)
