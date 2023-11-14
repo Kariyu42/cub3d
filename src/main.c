@@ -2,16 +2,16 @@
 #include "err_type.h"
 
 /*
-* CheckList for the Map
+* CheckList for the Map: kquetat-
 TODO check extension .cub ✅
 TODO collect map, trim \n ✅
-TODO Check map characters
-TODO At the same time check at least for ONLY one player, Not more than one.
-TODO Surround (entouré la carte) map with '\' ou pas... juste les espaces.
+TODO Check map characters 😊
+TODO At the same time check at least for ONLY one player, Not more than one. 😊
+TODO Surround (entouré la carte) map with '/' ou pas... juste les espaces.
 TODO Check map is closed using flood fill
 ! Need to check if there is more to add...
 
-* CheckList for the Data ABOVE the map.
+* CheckList for the Data ABOVE the map: epraduro
 TODO collect data, STOP condition is: if we encouter map we stop parsing.
 TODO check if all data is present.
 TODO check if path of texture is valid.

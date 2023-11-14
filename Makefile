@@ -4,6 +4,8 @@ SRC_PATH	=	./src/
 
 SRC			=	${addprefix ${SRC_PATH}, main.c \
 											parsing/parsing.c \
+											parsing/map_parser.c \
+											parsing/map_tools.c \
 											parsing/map_data.c}
 
 OBJ			=	${SRC:.c=.o}
