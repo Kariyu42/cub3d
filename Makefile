@@ -6,7 +6,9 @@ SRC			=	${addprefix ${SRC_PATH}, main.c \
 											parsing/parsing.c \
 											parsing/map_parser.c \
 											parsing/map_tools.c \
-											parsing/map_data.c}
+											parsing/map_data.c \
+											parsing/get_texture.c \
+											parsing/check_color.c}
 
 OBJ			=	${SRC:.c=.o}
 

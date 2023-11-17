@@ -2,6 +2,8 @@
 
 /* cub3D custom define */
 # define FAILS -1
+# define ERROR 2
+# define SUCCES 0
 
 /* List of Error messages */
 # define ARG_ERR "Error\nPlease provide a valid [.cub] map.\n"

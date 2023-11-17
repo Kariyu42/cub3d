@@ -23,10 +23,10 @@ char	*fill_the_rest(char *map, char *dup, int len, int i)
 
 char	*stock_line(char *map, char *dup, bool space, int len)
 {
-	int	i;
+	//int	i;
 	int	j;
 
-	i = 0;
+	//i = 0;
 	j = 0;
 	dup = malloc(sizeof(char) * (len + 1));
 	if (!dup)
@@ -34,7 +34,7 @@ char	*stock_line(char *map, char *dup, bool space, int len)
 	if (space)
 	{
 		dup[0] = '/';
-		i++;
+		//i++;
 	}
 	while (map[j])
 	{
@@ -73,47 +73,47 @@ int	longest_line(char **map)
 	return (res);
 }
 
-char	**map_dup(char **map)
-{
-	bool	space;
-	char	**tmp;
-	int		i;
-	int		len;
+// char	**map_dup(char **map)
+// {
+// 	bool	space;
+// 	char	**tmp;
+// 	int		i;
+// 	int		len;
 
-	i = -1;
-	space = false;
-	len = longest_line(map);
-	while (map[++i])
-	{
-		if (map[i][0] != ' ')
-			space = false;
-		else if (map[i][0] == ' ')
-			space = true;
-		tmp[i] = stock_line(map[i], tmp[i], space, len);
-		if (!tmp[i])
-			return (NULL);
-	}
-}
+// 	i = -1;
+// 	space = false;
+// 	len = longest_line(map);
+// 	while (map[++i])
+// 	{
+// 		if (map[i][0] != ' ')
+// 			space = false;
+// 		else if (map[i][0] == ' ')
+// 			space = true;
+// 		tmp[i] = stock_line(map[i], tmp[i], space, len);
+// 		if (!tmp[i])
+// 			return (NULL);
+// 	}
+// }
 
-int	inspect_map(t_config **conf)
-{
-	int		i;
-	char	**tmp;
+// int	inspect_map(t_config **conf)
+// {
+// 	int		i;
+// 	char	**tmp;
 
-	i = -1;
-	(*conf)->player = 0;
-	while ((*conf)->map[++i])
-	{
-		if (inspect_line(conf, (*conf)->map[i], "10 NWES") == false)
-			return (ft_putendl_fd(CHAR_ERR, STDERR_FILENO));
-		else if ((*conf)->player > 1)
-			return (ft_putendl_fd(PLAYER_ERR, STDERR_FILENO));
-	}
-	tmp = map_dup((*conf)->map);
-	if (!tmp)
-		return (ft_putendl_fd(MALLOC_ERR, STDERR_FILENO));
-	return (0);
-}
+// 	i = -1;
+// 	(*conf)->player = 0;
+// 	while ((*conf)->map[++i])
+// 	{
+// 		if (inspect_line(conf, (*conf)->map[i], "10 NWES") == false)
+// 			return (ft_putendl_fd(CHAR_ERR, STDERR_FILENO));
+// 		else if ((*conf)->player > 1)
+// 			return (ft_putendl_fd(PLAYER_ERR, STDERR_FILENO));
+// 	}
+// 	tmp = map_dup((*conf)->map);
+// 	if (!tmp)
+// 		return (ft_putendl_fd(MALLOC_ERR, STDERR_FILENO));
+// 	return (0);
+// }
 
 int	collect_data(t_config **conf, char **av, int fd)
 {
@@ -169,11 +169,9 @@ int	parse_data(t_config **conf, char **av)
 		return (FAILS);
 	else if (collect_data(conf, av, fd) == -1 || find_map(conf) == -1)
 		return (FAILS);
-	else if (inspect_map(conf) == -1)
-		return (FAILS);
+	// else if (inspect_map(conf) == -1)
+	// 	return (FAILS);
 	if (check_data(conf) == 2)
-		return (2);
-	if (check_format(conf) == 2)
 		return (2);
 	// print_map(conf);
 	// if (map_data(conf, av) == FAILS)
