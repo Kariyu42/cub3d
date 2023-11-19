@@ -58,23 +58,24 @@ void	print_map(t_config **conf);
 
 /*	GET_TEXTURE.C	*/
 int		skip(char *line);
-char	*get_texture_path_no(t_config **conf);
-char	*get_texture_path_so(t_config **conf);
-char	*get_texture_path_we(t_config **conf);
-char	*get_texture_path_ea(t_config **conf);
+int	get_colors(t_config **conf, int i);
+int	get_textures(t_config **conf, int i);
+int		get_texture_path(char *str, char **store_data, int *data);
 
 /*	CHECK_COLOR.C	*/
 int	ft_strcmp(char *s1, char *s2);
 int	same_color(t_config **conf);
 int	len_tab(char **tab);
 int	valid_color(char **color);
-int check_color(char ***color, char *line);
+int	check_color(char ***color, char *str, int *data);
 
 /*	MAP_DATA.C	*/
 bool	is_dir(char *arg);
-bool	is_xpm_file(char *arg);
 int	check_path(char *arg);
 int check_data(t_config **conf);
 
+char *format_path_texture(char *str);
+
+int ft_contain(char *str, char *find);
 
 // int	ft_close(t_vars *vars);
