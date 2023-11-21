@@ -29,7 +29,7 @@ static bool	scan_map(char *line)
 	i = 0;
 	while (line[i] && line[i] == ' ')
 		i++;
-	if (ft_strchr("1", line[i]))
+	if (ft_strchr("10", line[i]))
 		return (true);
 	return (false);
 }

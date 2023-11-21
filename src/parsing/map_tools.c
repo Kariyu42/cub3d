@@ -1,6 +1,24 @@
 #include "cub3d.h"
 #include "err_type.h"
 
+// /* Print_map to be removed */
+void	print_map(char **map)
+{
+	int	i;
+
+	i = 0;
+	if (!map)
+		return ;
+	while (map[i])
+	{
+		// printf("map[%.2d]: %s\naddress: %p\n", i, map[i], &map[i]);
+		printf("map[%.2d]: %s\n", i, map[i]);
+		i++;
+	}
+	printf("map[%d]: %s\n", i, map[i]);
+	return ;
+}
+
 bool	inspect_line(t_config **conf, char *map_line, char *to_find)
 {
 	int	i;
@@ -16,16 +34,21 @@ bool	inspect_line(t_config **conf, char *map_line, char *to_find)
 	return (true);
 }
 
-void	print_map(t_config **conf)
+int	longest_line(char **map)
 {
 	int	i;
+	int	len;
+	int	res;
 
-	i = 0;
-	while ((*conf)->map[i])
+	i = -1;
+	res = 0;
+	while (map[++i])
 	{
-		printf("%s\n", (*conf)->map[i]);
-		i++;
+		len = ft_strlen(map[i]);
+		if (res < len)
+			res = len;
 	}
+	return (res);
 }
 
 char	*trim_newline(char *str, char c)

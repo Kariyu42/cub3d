@@ -5,7 +5,12 @@
 #include <fcntl.h>
 #include <stdbool.h>
 
-
+/* char position in map struct, kquetat- */
+typedef struct s_pos
+{
+	int	x;
+	int	y;
+}	t_pos;
 
 typedef struct s_config
 {
@@ -15,6 +20,7 @@ typedef struct s_config
 	int		file_size;
 	int		map_loc;
 	int		map_len;
+	bool	anomaly; // kquetat-
 	int		player; // kquetat-
 	int		count_data; // epraduro
 	char	*no_text;// epraduro
@@ -49,9 +55,15 @@ int		map_len(t_config **conf);
 int		text_size(char **av, int fd);
 char	*trim_newline(char *str, char c);
 bool	inspect_line(t_config **conf, char *map_line, char *to_find);
+int		longest_line(char **map);
 
-/* PRINT MAP WHEN ALREADY STOCKED (must be removed before push)*/
-void	print_map(t_config **conf);
+/* INSPECT_MAP functions kquetat- */
+char	*fill_map(char *map, char *tmp, int line_len);
+char	*fill_extremities(char *tmp, int line_len);
+bool	flood_fill(t_config **conf, char **tmp);
+
+/* PRINT MAP WHEN ALREADY STOCKED (must be removed before push) */
+void	print_map(char **map);
 
 
 /* --- epraduro --- */

@@ -25,12 +25,16 @@ TODO color: check that integer doesn't exceed 0 - 255.
 
 int	main(int ac, char **av)
 {
+	int			err_type;
 	t_config	*conf; 
 
 	if (ac < 2)
 		return (ft_putendl_fd(ARG_ERR, STDERR_FILENO));
-	else if (parse_data(&conf, av) == FAILS) // must add launch_game(); later.
+	err_type = parse_data(&conf, av);
+	if (err_type == FAILS) // must add launch_game(); later.
 		return (-1);
+	else if (err_type == 2)
+		return (2);
 	return (0);
 }
 

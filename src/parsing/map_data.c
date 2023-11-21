@@ -67,9 +67,11 @@ int	check_data(t_config **conf)
 	int	i;
 
 	i = -1;
+	init_texture(conf);
 	while (++i < (*conf)->map_loc)
 		if (get_textures(conf, i) == ERROR || get_colors(conf, i) == ERROR)
 			return (ERROR);
+	// printf("data = %d\n", (*conf)->count_data);
 	if ((*conf)->count_data != 6)
 		return (ft_putendl_fd(ELEMENT_ERR, STDERR_FILENO));
 	if (same_color(conf) == ERROR)

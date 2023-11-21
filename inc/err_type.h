@@ -13,6 +13,7 @@
 # define DIR_ERR "Error\nCan't open a directory\n"
 # define EMPTY_ERR "Error\nNo Map was collected\n"
 # define PLAYER_ERR "Error\nCannot have more than one player\n"
+# define CHAR_ERR "Error\nFound an invalid char in the map\n"
 # define XPM_ERR "Error\nThe file is not a .xpm or there is an invalid char on the line\n"
 # define COLOR_ERR "Error\nPlease give a different color for the sky and the ground\n"
 # define NB_COLOR_ERR "Error\nPlease give a number between 0 and 255\n"
