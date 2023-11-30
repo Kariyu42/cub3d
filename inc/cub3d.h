@@ -5,12 +5,38 @@
 #include <fcntl.h>
 #include <stdbool.h>
 
+# define SIZE_MINMAP 11
+# define MID_MIMMAP 6
+
 /* char position in map struct, kquetat- */
 typedef struct s_pos
 {
 	int	x;
 	int	y;
 }	t_pos;
+
+typedef struct s_vector
+{
+	int	x;
+	int	y;
+}		t_vector;
+
+typedef struct s_window
+{
+	void		*reference;
+	t_vector	size;
+}				t_window;
+
+typedef struct s_image
+{
+	void		*reference;
+	t_vector	size;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_size;
+	int			endian;
+}				t_image;
+
 
 typedef struct s_config
 {
@@ -35,6 +61,10 @@ typedef struct s_config
 	int 	c_find;// epraduro
 	char	**f_color;// epraduro
 	char	**c_color;// epraduro
+	int		pos_x;
+	int		pos_y;
+	int		pos_p_x;
+	int		pos_p_y;
 	/*
 	mlx window
 	donnees parsing
@@ -42,11 +72,24 @@ typedef struct s_config
 	*/
 }	t_config;
 
+typedef struct s_bdd
+{
+	t_image		wall;
+	t_image		floor;
+	t_image		player;
+	t_image		empty;
+}				t_bdd;
+
 typedef struct	s_vars 
 {
 	void	*mlx;
 	void	*win;
+	t_bdd	bdd;
+	t_window	window;
 }				t_vars;
+
+/*	MINIMAP	*/
+
 
 /* --- PARSING --- kquetat- */
 int		parse_data(t_config **conf, char **av);
@@ -89,5 +132,11 @@ int check_data(t_config **conf);
 char *format_path_texture(char *str);
 
 int ft_contain(char *str, char *find);
+
+/*	MINI_MAP.C	*/
+
+void	load_img(t_vars *vars);
+int	load_map(t_config **conf, t_vars *vars);
+int		create_trgb(int t, int r, int g, int b);
 
 // int	ft_close(t_vars *vars);

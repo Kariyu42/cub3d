@@ -9,7 +9,8 @@ SRC			=	${addprefix ${SRC_PATH}, main.c \
 											parsing/map_data.c \
 											parsing/map_parser.c \
 											parsing/map_tools.c \
-											parsing/parsing.c}
+											parsing/parsing.c \
+											parsing/minimap/mini_map.c}
 
 OBJ			=	${SRC:.c=.o}
 
@@ -32,6 +33,7 @@ ${SRC_PATH}%.o: ${SRC_PATH}%.c
 NAME	=	cub3D
 LIBFT	=	./Lib/Libft/
 MLX		=	./Lib/minilibx/
+MLX2	= ./mlx2/
 
 all:	${NAME}
 
